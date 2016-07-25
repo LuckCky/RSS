@@ -1,0 +1,1 @@
+celery -A rss worker --loglevel=info

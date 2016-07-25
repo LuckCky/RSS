@@ -1,0 +1,122 @@
+[2016-07-22 16:47:21,416: WARNING/MainProcess] c:\program files (x86)\python35-32\lib\site-packages\celery\apps\worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2016-07-22 16:47:21,652: ERROR/MainProcess] Unrecoverable error: ImportError("No module named 'sqlalchemy'",)
+Traceback (most recent call last):
+  File "c:\program files (x86)\python35-32\lib\site-packages\kombu\utils\__init__.py", line 323, in __get__
+    return obj.__dict__[self.__name__]
+KeyError: 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\worker\__init__.py", line 206, in start
+    self.blueprint.start(self)
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\bootsteps.py", line 119, in start
+    self.on_start()
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\apps\worker.py", line 169, in on_start
+    string(self.colored.cyan(' \n', self.startup_info())),
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\apps\worker.py", line 230, in startup_info
+    results=self.app.backend.as_uri(),
+  File "c:\program files (x86)\python35-32\lib\site-packages\kombu\utils\__init__.py", line 325, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\app\base.py", line 626, in backend
+    return self._get_backend()
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\app\base.py", line 444, in _get_backend
+    self.loader)
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\__init__.py", line 68, in get_backend_by_url
+    return get_backend_cls(backend, loader), url
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\__init__.py", line 49, in get_backend_cls
+    cls = symbol_by_name(backend, aliases)
+  File "c:\program files (x86)\python35-32\lib\site-packages\kombu\utils\__init__.py", line 96, in symbol_by_name
+    module = imp(module_name, package=package, **kwargs)
+  File "c:\program files (x86)\python35-32\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\database\__init__.py", line 21, in <module>
+    from .models import Task
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\database\models.py", line 13, in <module>
+    import sqlalchemy as sa
+ImportError: No module named 'sqlalchemy'
+[2016-07-22 16:47:34,207: WARNING/MainProcess] c:\program files (x86)\python35-32\lib\site-packages\celery\apps\worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2016-07-22 16:47:34,212: ERROR/MainProcess] Unrecoverable error: ImportError("No module named 'sqlalchemy'",)
+Traceback (most recent call last):
+  File "c:\program files (x86)\python35-32\lib\site-packages\kombu\utils\__init__.py", line 323, in __get__
+    return obj.__dict__[self.__name__]
+KeyError: 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\worker\__init__.py", line 206, in start
+    self.blueprint.start(self)
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\bootsteps.py", line 119, in start
+    self.on_start()
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\apps\worker.py", line 169, in on_start
+    string(self.colored.cyan(' \n', self.startup_info())),
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\apps\worker.py", line 230, in startup_info
+    results=self.app.backend.as_uri(),
+  File "c:\program files (x86)\python35-32\lib\site-packages\kombu\utils\__init__.py", line 325, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\app\base.py", line 626, in backend
+    return self._get_backend()
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\app\base.py", line 444, in _get_backend
+    self.loader)
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\__init__.py", line 68, in get_backend_by_url
+    return get_backend_cls(backend, loader), url
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\__init__.py", line 49, in get_backend_cls
+    cls = symbol_by_name(backend, aliases)
+  File "c:\program files (x86)\python35-32\lib\site-packages\kombu\utils\__init__.py", line 96, in symbol_by_name
+    module = imp(module_name, package=package, **kwargs)
+  File "c:\program files (x86)\python35-32\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 662, in exec_module
+  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\database\__init__.py", line 21, in <module>
+    from .models import Task
+  File "c:\program files (x86)\python35-32\lib\site-packages\celery\backends\database\models.py", line 13, in <module>
+    import sqlalchemy as sa
+ImportError: No module named 'sqlalchemy'
