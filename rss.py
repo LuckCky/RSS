@@ -1,13 +1,14 @@
 from celery import Celery
+import feedparser
 
 app = Celery('rss', broker='amqp://guest@localhost//')
 app.conf.CELERY_RESULT_BACKEND = 'db+sqlite:///results.sqlite'
 
 @app.task
 def feeds(x):
-    import feedparser
     feed = feedparser.parse(x)
-    return feed.feed.title
+    # feed = str(feed).encode('utf8')
+    return feed
 
 @app.task
 def add(x, y):
