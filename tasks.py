@@ -1,6 +1,8 @@
 from celery import Celery
 import feedparser
 import django
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lenta_rss.lenta.lenta.settings")
 django.setup()
 
 app = Celery('rss', broker='amqp://guest@localhost//')

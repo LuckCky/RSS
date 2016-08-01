@@ -1,3 +1,4 @@
 from django.contrib import admin
+from lenta_rss.lenta.lrss.models import News
 
-# Register your models here.
+admin.site.register(News)
