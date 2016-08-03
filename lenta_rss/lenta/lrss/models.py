@@ -5,6 +5,7 @@ class News(models.Model):
     name = models.TextField()
     brief = models.TextField()
     rubric = models.TextField()
+    link = models.TextField()
 
     def __unicode__(self):
         return self.name
