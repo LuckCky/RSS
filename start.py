@@ -6,6 +6,10 @@ result = tasks.feeds.delay('https://lenta.ru/rss')
 c = result.get(timeout=5)
 for x in range(0, len(c['entries'])):
     try:
+        rubric = c['entries'][x]['tags'][0]['term']
+    except KeyError:
+        rubric = ' '
+    try:
         News.objects.get(name=c['entries'][x]['title'])
         pass
     except News.DoesNotExist:
@@ -30,6 +34,6 @@ for x in range(0, len(c['entries'])):
         n = News(link=c['entries'][x]['link'],
                  name=c['entries'][x]['title'],
                  date=date,
-                 rubric=c['entries'][x]['tags'][0]['term'],
+                 rubric=rubric,
                  brief=c['entries'][x]['summary'])
         n.save()
