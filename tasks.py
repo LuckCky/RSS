@@ -6,6 +6,7 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lenta_rss.lenta.lenta.settings")
 django.setup()
 from lenta_rss.lenta.lrss.models import News
+from celery.decorators import periodic_task
 
 app = Celery('rss', broker='amqp://guest@localhost//')
 app.conf.CELERY_RESULT_BACKEND = 'db+sqlite:///results.sqlite3'
@@ -15,9 +16,9 @@ def feeds(x):
     feed = feedparser.parse(x)
     return feed
 
+@periodic_task(run_every=datetime.timedelta(minutes=5))
 def start():
-    result = feeds.delay('https://lenta.ru/rss')
-    c = result.get(timeout=5)
+    c = feeds('https://lenta.ru/rss')
     for x in range(0, len(c['entries'])):
         try:
             rubric = c['entries'][x]['tags'][0]['term']
@@ -38,7 +39,7 @@ def start():
                       'Jun': 6,
                       'Jul': 7,
                       'Aug': 8,
-                      'Sep': 9,
+                     'Sep': 9,
                       'Oct': 10,
                       'Nov': 11,
                       'Dec': 12}
@@ -52,5 +53,5 @@ def start():
                      brief=c['entries'][x]['summary'])
             n.save()
 
-if __name__ == "main":
+if __name__ == "__main__":
     start()
