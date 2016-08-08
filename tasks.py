@@ -16,7 +16,7 @@ def feeds(x):
     feed = feedparser.parse(x)
     return feed
 
-@periodic_task(run_every=datetime.timedelta(minutes=5))
+@periodic_task(run_every=datetime.timedelta(minutes=15))
 def start():
     c = feeds('https://lenta.ru/rss')
     for x in range(0, len(c['entries'])):
