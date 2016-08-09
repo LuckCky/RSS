@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from lenta_rss.lenta.lenta.views import hello
+from lenta_rss.lenta.lrss import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^rss/', hello),
+    url(r'^rss/', views.search_form),
 
 ]
