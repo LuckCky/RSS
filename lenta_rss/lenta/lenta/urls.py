@@ -19,6 +19,7 @@ from lenta_rss.lenta.lrss import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^rss/', views.search_form),
+    url(r'^rss/$', views.search_form),
+    url(r'^search/$', views.search),
 
 ]
