@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Search</title>
+</head>
+<p>Вы искали: <strong>{{ query }}</strong></p>
+
+{% if news %}
+	<p>Найдено {{ news|length }} новостей.</p>
+	<ul>
+		{% for n in news %}
+		<li>{{ news.Name }}</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>Книг, удовлетворяющих заданному критерию, не найдено.</p>
+{% endif %}
