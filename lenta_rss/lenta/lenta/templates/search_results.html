@@ -8,7 +8,8 @@
 	<p>Found {{ News|length }} news.</p>
 	<ul>
 		{% for n in News %}
-		<li>{{ News.News object }}</li>
+		<li>{{ n.title }}</li>
+		<a href={{ n.link }}>{{ n.link }}</a>
 		{% endfor %}
 	</ul>
 {% else %}
