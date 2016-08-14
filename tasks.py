@@ -25,7 +25,7 @@ def start():
         except KeyError:
             rubric = ' '
         try:
-            News.objects.get(name=c['entries'][x]['title'])
+            News.objects.get(title=c['entries'][x]['title'])
             pass
         except News.DoesNotExist:
             date = c['entries'][x]['published'].split(',')
@@ -47,7 +47,7 @@ def start():
             year = int(date[3])
             date = datetime.date(year, month, day)
             n = News(link=c['entries'][x]['link'],
-                     name=c['entries'][x]['title'],
+                     title=c['entries'][x]['title'],
                      date=date,
                      rubric=rubric,
                      brief=c['entries'][x]['summary'])

@@ -1,11 +1,11 @@
-<html>
+﻿<html>
 <head>
-	<title>Results</title>
+	<title>Результаты поиска</title>
 </head>
-<p>You searched news from: <strong>{{ from }}</strong> till <strong>{{ till }}</strong></p>
+<p>Вы искали новости с: <strong>{{ from }}</strong> по <strong>{{ till }}</strong></p>
 
 {% if News %}
-	<p>Found {{ News|length }} news.</p>
+	<p>Новостей найдено: {{ News|length }}.</p>
 	<ul>
 		{% for n in News %}
 		<li>{{ n.title }}</li>
@@ -13,5 +13,5 @@
 		{% endfor %}
 	</ul>
 {% else %}
-	<p>No news is a good news</p>
+	<p>Нет новостей, тоже хорошие новости</p>
 {% endif %}
