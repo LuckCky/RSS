@@ -1,9 +1,9 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from lenta_rss.lenta.lrss.models import News
-import datetime
 
 def search_form(request):
+    # rubrics = News.objects.filter()
     return render_to_response('search_form.html')
 
 def search(request):
