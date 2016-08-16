@@ -6,7 +6,21 @@
 	<form action="/search/" method="get">
 		<input type="date" name="from">
 		<input type="date" name="till">
+
+	<ul>
+		<p><select size="3" multiple>
+		<option disabled>Выберите рубрики</option>
+		{% for n in rubrics %}
+		<option>n</option>
+		{% endfor %}
+		</select></p>
+
+	</ul>
 		<input type="submit" value="Искать">
+
+			{% for n in rubrics %}
+			<li>{{ n }}</li>
+			{% endfor %}
 	</form>
 </body>
 </html>
