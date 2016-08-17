@@ -8,19 +8,16 @@
 		<input type="date" name="till">
 
 	<ul>
-		<p><select size="3" multiple>
+		<p><select size="3" multiple name="rubric">
 		<option disabled>Выберите рубрики</option>
-		{% for n in rubrics %}
-		<option>n</option>
+		{% for n in Rubrics %}
+		<option>{{ n.rubric }}</option>
 		{% endfor %}
 		</select></p>
 
 	</ul>
 		<input type="submit" value="Искать">
 
-			{% for n in rubrics %}
-			<li>{{ n }}</li>
-			{% endfor %}
 	</form>
 </body>
 </html>
