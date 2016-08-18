@@ -8,7 +8,7 @@
 		<input type="date" name="till">
 
 	<ul>
-		<p><select size="3" multiple name="rubric">
+		<p><select size="20" multiple name="rubric[]">
 		<option disabled>Выберите рубрики</option>
 		{% for n in Rubrics %}
 		<option>{{ n.rubric }}</option>
