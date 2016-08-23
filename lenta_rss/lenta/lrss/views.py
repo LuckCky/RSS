@@ -14,7 +14,8 @@ def search(request):
             rubric = request.GET['rubric']
             news = News.objects.filter(date__range=[f, t], rubric=rubric)
         else:
+            rubric = None
             news = News.objects.filter(date__range=[f, t])
-        return render_to_response('search_results.html', {'News': news, 'from': f, 'till': t})
+        return render_to_response('search_results.html', {'News': news, 'from': f, 'till': t, 'rubric': rubric})
     else:
         return HttpResponse('Введите поисковый запрос.')
